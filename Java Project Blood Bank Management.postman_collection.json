@@ -1,0 +1,404 @@
+{
+	"info": {
+		"_postman_id": "ca31d3a3-fb11-4401-a332-af6143ec3b12",
+		"name": "Java Project Blood Bank Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST Specimen",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bloodgroup\": \"a1\",\r\n  \"rhfactor\": \"positive\",\r\n  \"unitsreceived\": {{random_number}},\r\n  \"collectedon\": \"{{currentDate}}\",\r\n  \"expirydate\": \"{{expiryDate}}\",\r\n  \"performedby\": 123,\r\n  \"comments\": \"sample comments\",\r\n  \"status\": \"A\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{server}}:{{port}}/specimen",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"specimen"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Specimen",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"OID\":3,\r\n  \"bloodgroup\": \"a1\",\r\n  \"rhfactor\": \"positive\",\r\n  \"unitsreceived\": {{random_number}},\r\n  \"collectedon\": \"{{currentDate}}\",\r\n  \"expirydate\": \"{{expiryDate}}\",\r\n  \"performedby\": 123,\r\n  \"comments\": \"sample comments\",\r\n  \"status\": \"A\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{server}}:{{port}}/specimen/3",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"specimen",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Procedure",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"performedOn\": \"{{currentDate}}\",\r\n    \"performedBy\": 1,\r\n    \"specimenOID\": 1,\r\n    \"unitsTransfused\": {{random_number}},\r\n    \"comments\": \"Comment text\",\r\n    \"status\": \"A\",\r\n    \"patientOID\":100\r\n  }\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{server}}:{{port}}/procedure",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"procedure"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Procedure",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"performedOn\": \"{{currentDate}}\",\r\n    \"performedBy\": 1,\r\n    \"specimenOID\": 1,\r\n    \"unitsTransfused\": {{random_number}},\r\n    \"comments\": \"Comment text\",\r\n    \"status\": \"A\",\r\n    \"patientOID\":100\r\n  }\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{server}}:{{port}}/procedure",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"procedure"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "welcome Procedure",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{server}}:{{port}}/welcomeProcedure",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"welcomeProcedure"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Speciment List",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{server}}:{{port}}/specimen",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"specimen"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Speciment detail",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{server}}:{{port}}/specimen",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"specimen"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Procedure List",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{server}}:{{port}}/procedure",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"procedure"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Procedure Detail",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{server}}:{{port}}/procedure/1",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"procedure",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"var moment = require('moment');",
+					"postman.setGlobalVariable('currentDate', (new Date()).toISOString());",
+					"var expiryDate= moment().add(6,\"months\");",
+					"postman.setGlobalVariable('expiryDate', (expiryDate).toISOString());",
+					"pm.environment.set(\"random_number\", _.random(1, 10));"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "username",
+			"value": "user",
+			"type": "default"
+		},
+		{
+			"key": "password",
+			"value": "user",
+			"type": "default"
+		},
+		{
+			"key": "invalidusername",
+			"value": "user1",
+			"type": "default"
+		},
+		{
+			"key": "port",
+			"value": "8200",
+			"type": "default"
+		},
+		{
+			"key": "server",
+			"value": "localhost",
+			"type": "default"
+		}
+	]
+}
